@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us</title>
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            height: 100%;
+            font-family: 'Roboto', sans-serif ;
+            background: #000;
+        }
+
+        .strip{
+            position: absolute;
+            height: 100vh;
+            background: #fff ;
+            width: 0.0625rem;
+            opacity: .3;
+        }
+
+        .one{
+            left: 25%;
+        }
+
+        .two{
+            left:50%;
+        }
+
+        .three{
+            left: 75%;
+        }
+
+        .container{
+            align-items:flex-start;
+            display:flex;
+            justify-content: center;
+            padding: 16.875rem 1.5rem;
+        }
+
+
+        .card-grid{
+            display: grid;
+            grid-column-gap: 1.5rem; /*adjust the gap between the cards /profiles*/
+            max-width: 75rem;  /*adjust the size width of the screen */
+            width: 100%;/*this is for to contain the full space of the screen that you have describe above*/
+            
+
+        }
+
+        @media(min-width:75rem) {
+            .card-grid{
+                grid-template-columns: repeat(5, 1fr);
+            }
+        }
+
+        .card{
+            position: relative;
+        }
+
+        .card::before{
+            content: '';
+            display: block;
+            padding-bottom: 150%;
+
+        }
+
+        .card-background{
+            background-size: cover;
+            background-position: center;
+            border-radius: 0.9375rem;
+            bottom:0;
+            top:0;
+            left:0;
+            right: 0;
+            position: absolute;
+            transition: filter .2s linear, transform .2s linear;
+
+        }
+
+        .card:hover .card-background{
+            transform: scale(1.25) translateZ(0);
+        }
+
+        .card-grid:hover > .card:not(:hover) .card-background{
+            filter: brightness(1) saturate(0) contrast(1) blur(1.25);
+        }
+
+        .card-content{
+            padding: 14.375rem 1.25rem;
+            position: absolute;
+            top: 0;
+        }
+
+        .card-description{
+            color: rgba(255, 255, 255, .5);
+            font-size: .9rem;
+            text-transform: uppercase;
+        }
+
+        .card-heading{
+            color: rgba(255,255,255, .9);
+            font-size: 1.9rem;
+            text-shadow: 0.125rem 0.125rem 1.25rem rgba(0,0,0,.2) ;
+
+        }
+
+        p{
+            margin-top: -1.875rem;
+        }
+
+
+    </style>
+</head>
+<body>
+    <h1 style="font-size:60px; align-items: center; color: aliceblue; 
+    text-align: center; font-family: Georgia, 'Times New Roman', Times, serif; font-size: 8.5vh;">ABOUT US</h1>
+    <div>
+        <div class="strip one"></div>
+        <div class="strip two"></div>
+        <div class="strip three"></div>
+    </div>
+
+    <section class="container">
+        <div class="card-grid">
+            <a href="" class="card">
+                <div class="card-background" style="background-image:url(ashish.jpeg) ;"></div>
+                <span class="card-content">
+                    <h3 class="card-heading">Ashish </h3>
+                    <p class="card-description">Graphic Designer</p>
+                </span>
+            </a>
+
+            <a href="" class="card">
+                <div class="card-background" style="background-image:url(prapti.jpeg) ;"></div>
+                <span class="card-content">
+                    <h3 class="card-heading">Prapti </h3>
+                    <p class="card-description">Front-End Developer</p>
+                </span>
+            </a>
+
+            <a href="" class="card">
+                <div class="card-background" style="background-image:url(upsana\ \(2\).jpeg) ;"></div>
+                <span class="card-content">
+                    <h3 class="card-heading">Garima</h3>
+                    <p class="card-description">Project Manager</p>
+                </span>
+            </a>
+
+            <a href="" class="card">
+                <div class="card-background" style="background-image:url(divya.jpeg) ;"></div>
+                <span class="card-content">
+                    <h3 class="card-heading">Divya </h3>
+                    <p class="card-description">Back-End Developer</p>
+                </span>
+            </a>
+
+            <a href="" class="card">
+                <div class="card-background" style="background-image:url(upsana\ \(1\).jpeg) ;"></div>
+                <span class="card-content">
+                    <h3 class="card-heading">Upasana </h3>
+                    <p class="card-description">Marketing Manager</p>
+                </span>
+            </a>
+
+        </div>
+    </section>
+</body>
+</html>
